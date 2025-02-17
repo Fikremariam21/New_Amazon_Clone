@@ -1,10 +1,32 @@
+@import "tailwindcss";
+
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
 :root {
   --primary-color: #febd69; /* Amazon Add to Cart button color */
   --primary-shad: #d49644; /* Slightly transparent version of the Amazon color */
+  --my-blue: rgb(9, 132, 209);
+  
 }
+
+html {
+  font-size: 16px; /* Default font size */
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 14px; /* Smaller font size for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  html {
+    font-size: 12px; /* Even smaller font size for mobile */
+  }
+}
+
+
+

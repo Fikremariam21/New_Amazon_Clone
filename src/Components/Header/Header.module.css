@@ -41,7 +41,7 @@
   /* Comment Code */
   
   .delivery p {
-    font-size: 10px;
+    font-size: 0.62rem;
   } 
   
   /* Comment Code */
@@ -122,7 +122,7 @@
   /* Comment Code */
   
   .order_container p {
-    font-size: 10px;
+    font-size: 0.62rem;
   }
   
   /* Comment Code */
@@ -154,7 +154,7 @@
   .cart span{
     position: absolute;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 1.25rem;
     top: 0;
     background-color: #1a1a1a;
     left: 16px;
