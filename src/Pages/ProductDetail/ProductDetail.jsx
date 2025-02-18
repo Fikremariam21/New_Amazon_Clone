@@ -165,15 +165,17 @@ const ProductDetail = () => {
 
   return (
     <LayOut>
-      {isLoading ? (
+      {
+      isLoading ? (
         <Loader />
       ) : product && product.id ? (
-        <ProductCard product={product} />
-      ) : (
-        <p>Product not found</p>
-      )}
+        <ProductCard product={product} 
+        flex={true}
+        renderDesc = {true}
+        />) : (
+        <p>Product not found</p>)}
     </LayOut>
-  );
-};
+  )
+}
 
 export default ProductDetail;
