@@ -24,7 +24,6 @@ const Results = () => {
             setIsLoading(false)
         })
     }, [])
-    
 
   return (
     <LayOut> 
@@ -38,6 +37,8 @@ const Results = () => {
             {results?.map((product) =>(
                 <ProductCard key={product.id}
                 product={product}
+                renderDesc={false}
+                renderAdd={true}
                 />
             ))}
 
