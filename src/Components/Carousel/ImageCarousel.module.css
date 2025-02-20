@@ -1,7 +1,12 @@
 .hero_img{
     position: relative;
+    margin-top: 50px;
 
 }
+/* 
+.carousel_container{
+    margin-top: 100px;
+} */
 .hero_img::before{
     content: "";
     position: absolute;

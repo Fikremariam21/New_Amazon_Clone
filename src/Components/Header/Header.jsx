@@ -3,7 +3,7 @@ import classes from "./Header.module.css";
 import { SlLocationPin } from "react-icons/sl";
 import { BsSearch } from "react-icons/bs";
 import { BiCart } from "react-icons/bi";
-import LowerHeader from "./LowerHeader/LowerHeader";
+import LowerHeader from "./LowerHeader";
 import { Link } from "react-router-dom";
 import { DataContext } from "../DataProvider/DataProvider";
  
@@ -12,7 +12,7 @@ const Header = () => {
  const [{basket}, dispatch]= useContext(DataContext) 
  console.log(basket.length)
   return (
-    <>
+    <div className={classes.outer_wrapper}>
       <section>
         <div className={classes.header_container}>
           {/* Logo section */}
@@ -73,7 +73,7 @@ const Header = () => {
           </div>
       </section>
       <LowerHeader/>
-    </>
+    </div>
   );
 };
 

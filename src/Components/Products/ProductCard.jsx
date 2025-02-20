@@ -25,9 +25,10 @@ function ProductCard({product, flex, renderDesc}) {
   return (
     <div  className= {`${styles.card_container} ${flex? styles.product_flexed : ""}`}> 
         <Link to= {`/products/${id}`} className={styles.image_link}> 
+        <br/>
             <img src={image} alt="" /> 
         </Link>
-        <div className=' '>
+        <div className= {styles.description }>
             <h3 className=' ' > {title}</h3> 
             {renderDesc && <div style={{ maxWidth: "750px"}}> {description}</div>}
             <div className= {`${styles.rating}  `}> 

@@ -25,7 +25,7 @@ function Product() {
      }, []);
     
   return (
-    <>
+    <div className={styles.main_container}>
     {
       isLoading?(<Loader/>) : (
         <section className= {`${styles.product_container}`}> 
@@ -36,7 +36,7 @@ function Product() {
         }
     </section>)
     }
-    </>
+    </div>
     
   )
 }

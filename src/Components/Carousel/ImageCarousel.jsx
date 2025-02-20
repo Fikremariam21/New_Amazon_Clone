@@ -6,18 +6,17 @@ import classes from './ImageCarousel.module.css'
 
 function ImageCarousel() {
   return (
-    <div>
+    <div className={classes.carousel_container}>
        <Carousel
           autoPlay={true}
           infiniteLoop={true}
           showThumbs={false}
           showIndicators={false}
           showStatus={false}
-          className="tailwind-carousel"
         >
              {
               img.map((imageLink, index) => {
-                return <img key= {index} src={imageLink} alt='carousel images' className=''/>
+                return <img key= {index} src={imageLink} alt='carousel images' className={classes.carousel_image}/>
               })
              }
         </Carousel> 
