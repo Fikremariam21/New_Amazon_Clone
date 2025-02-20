@@ -11,8 +11,8 @@ const Landing = () => {
       <ImageCarousel/>
       <Category/>
       <Product/>
-      </LayOut>
+      </LayOut> 
   );
 };
 
-export default Landing;
+export default Landing; 
