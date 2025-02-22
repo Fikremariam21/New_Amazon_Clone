@@ -9,15 +9,16 @@
   --primary-color: #febd69; /* Amazon Add to Cart button color */
   --primary-shad: #d49644; /* Slightly transparent version of the Amazon color */
   --my-blue: rgb(9, 132, 209);
+  --Amazon-btn: #fcda42;
   
 }
 
 html {
   font-size: 16px; /* Default font size */
 }
-body{
+/* body{
   padding-top: 95px;
-}
+} */
 
 @media (max-width: 768px) {
   html {
