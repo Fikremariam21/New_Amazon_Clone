@@ -2,6 +2,9 @@
 import React from 'react';
 import styles from './Category.module.css'
 import { Link } from 'react-router-dom';
+
+
+
 const CategoryCard = ({data}) => {
   return (
     <div className={`${styles.category_card} `}> 

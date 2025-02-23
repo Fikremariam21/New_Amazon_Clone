@@ -3,10 +3,10 @@
     margin-top: 50px;
 
 }
-/* 
+
 .carousel_container{
-    margin-top: 100px;
-} */
+    margin-top: 95px;
+}
 .hero_img::before{
     content: "";
     position: absolute;

@@ -1,63 +1,70 @@
 import React, { useState, useEffect, useContext} from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate} from "react-router-dom";
 import styles from "./Auth.module.css";
 import {auth} from "../../Utility/firebase";
 import { signInWithEmailAndPassword, createUserWithEmailAndPassword} from "firebase/auth";
 import {DataContext} from '../../Components/DataProvider/DataProvider.jsx';
+import {ClipLoader} from "react-spinners"
 
 
 function Auth() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-  
+  const [loading, setLoading] = useState({
+    signIn: false,
+    signUp: false,
+  })
+
+
   const[{user},  dispatch] = useContext(DataContext);
 
-  console.log(user)
+// Initialize the navigation
+
+  const navigate = useNavigate()
+  // console.log(user)
+
   const authHandler = async(e) =>{
+    setLoading({...loading, signIn: true})
     e.preventDefault();
     // console.log(e.target.name);
     if(e.target.name === "Signin"){
+      
 
-      signInWithEmailAndPassword(auth, email, password).then((userCredential) => {
-        // Signed in 
-        const user = userCredential.user;
-        console.log(user);
+      signInWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
         dispatch({
           type: 'SET_USER',
           user: userCredential.user, 
-
         });
-        // ...
+        setLoading({...loading, signIn: false})
+        navigate("/")
       })
-      .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        console.log(errorMessage);
+      .catch((err) => {
+        setError(err.message);
+        setLoading({...loading, signIn: false})
         // ..
       });
+      
 
     } else{
-  }
-    createUserWithEmailAndPassword(auth, email, password).then((userCredential) => {
-      // Signed up 
-      const user = userCredential.user;
-      console.log(user);
-    })
-    .catch((error) => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      console.log(errorMessage);
-      dispatch({
-        type: Type.SET_USER,
-        user: userCredential.user, 
-
+      setLoading({...loading, signUp: true})
+      createUserWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        setError(err.message);
+        dispatch({
+          type: Type.SET_USER,
+          user: userCredential.user, 
+        });
+        setLoading({...loading, signUp: false})
+        navigate("/")
+      })
+      .catch((err) => {
+        setError(err.message);
+        setLoading({...loading, signUp: false})
       });
-    });
-       
-     
+  } 
   }
-
   return (
     <section className={styles.login}>
       <Link to="/">
@@ -81,7 +88,13 @@ function Auth() {
           <input value={password} onChange={(e) => setPassword(e.target.value)} type="password" id="password" required />
 
           </div>
-          <button type="submit" name="Signin" onClick={authHandler} className={styles.btn_signIn}> Sign In</button>
+          <button type="submit" name="Signin" onClick={authHandler} className={styles.btn_signIn}> 
+            { loading.signIn? (<ClipLoader  color="#007185" size={20}/>
+            ):(
+            "Sign In"
+            )}
+            
+          </button>
         </form>
         {/* Agreement */}
         <p className={styles.terms_links}> 
@@ -105,7 +118,18 @@ function Auth() {
       <div className={styles.newToAmazon_container}> 
         <span className={styles.newToAmazon}> New to Amazon? </span>
       </div>
-      <button type="submit" name="SignUp" onClick={authHandler} className={styles.btn_createAccount}> Create your Amazon Account</button>
+      <button type="submit" name="SignUp" onClick={authHandler} className={styles.btn_createAccount}> 
+        
+      { loading.signUp? (<ClipLoader color="#007185" size={20} />
+            ):(
+            " Create your Amazon Account"
+            )}
+       
+
+      </button>
+      {
+        error && <small style={{paddingTop: "7px", color: "red"}}> {error} </small>
+      }
 
       <hr className={styles.create_account_hr}/>
 
@@ -115,8 +139,9 @@ function Auth() {
         <div> <a> Help</a></div>
       </div>
       <p className={styles.copy_right}>&copy; 1996-2025, Amazon.com, Inc. or its affiliates</p>
-
+     
     </section>
+    
   );
 }
 

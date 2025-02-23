@@ -6,7 +6,9 @@ import { Link } from 'react-router-dom'
 import { DataContext } from '../DataProvider/DataProvider'
 import {Type} from '../../Utility/action.type'
 
+
 function ProductCard({product, flex, renderDesc, renderAdd}) {
+    
     const {image, title, id, rating, price, description}= product;
 
     const [state, dispatch]= useContext(DataContext)
@@ -19,9 +21,7 @@ function ProductCard({product, flex, renderDesc, renderAdd}) {
                 image, title, id, rating, price, description
             }
         })
-
     }
-
   return (
     <div  className= {`${styles.card_container} ${flex? styles.product_flexed : ""}`}> 
         <Link to= {`/products/${id}`} className={styles.image_link}> 
@@ -32,8 +32,11 @@ function ProductCard({product, flex, renderDesc, renderAdd}) {
             <h3 className=' ' > {title}</h3> 
             {renderDesc && <div style={{ maxWidth: "750px"}}> {description}</div>}
             <div className= {`${styles.rating}  `}> 
+            {console.log("Rating Value:", rating?.rate)}
+            {console.log("Rating Count:", rating?.count)} 
+
                 {/* Rating */}
-                <Rating value={rating?.rate} precision={0.1} readOnly/>
+                <Rating value={rating?.rate || 0} precision={0.1} readOnly/>
                 {/* Count*/}
                 <small className=' ' > {rating?.count} </small>
             </div>
