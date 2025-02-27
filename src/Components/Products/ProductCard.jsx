@@ -28,8 +28,10 @@ function ProductCard({product, flex, renderDesc, renderAdd}) {
         })
     }
   return (
+     
     <div  className= {`${styles.card_container} ${flex? styles.product_flexed : ""}`}> 
         <Link to= {`/products/${id}`} className={styles.image_link}> 
+        <br/>
         <br/>
             <img src={image} alt="" /> 
         </Link>
@@ -53,11 +55,12 @@ function ProductCard({product, flex, renderDesc, renderAdd}) {
             {
             renderAdd && <button className= {`${styles.button}`} onClick={addToCart}> add to cart </button> 
             }
-            <div>
+            {/* <div>
                
-            </div>
+            </div> */}
         </div>
     </div>
+     
   )
 }
 

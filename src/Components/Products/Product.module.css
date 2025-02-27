@@ -4,15 +4,21 @@
 
    }  */
 
+
+
+   /* .card_Section{
+    margin-top: 50px;
+   } */
+
    .card_container {
     width: 250px;
-    /* height: auto; */
+    height: auto;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    padding: 10px;
+    padding: 0 10px  ;
     color: black;
     text-decoration: none;
     position: relative;
-    margin: 0 5px;  
+    /* margin: 0px 5px;   */
   }
   
   
@@ -21,13 +27,16 @@
   }
   
   .card_container img {
-    /* padding: 10px;   */
+    padding-top: 0px;  
     width: 100%; 
-    max-height: 130px;
+    max-height: 120px;
     display: block;
     margin: 0 auto;
     object-fit: contain;
     
+  }
+  .card_container h3{
+    font-weight: bold;
   }
   
   .button {
@@ -65,7 +74,7 @@
     flex-wrap: wrap;  
     justify-content: center;
     max-width: 1450px;
-    margin: 50px auto;
+    margin: 30px auto;
     gap: 40px; 
     justify-items: center;
     padding: 0 50px;  

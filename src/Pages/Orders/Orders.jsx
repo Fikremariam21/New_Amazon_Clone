@@ -6,7 +6,6 @@ const Orders = () => {
     <LayOut> 
     <div>
         Orders
-
     </div>
     </LayOut>
   )

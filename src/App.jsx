@@ -6,7 +6,7 @@ import { useContext, useEffect } from "react"
 import Routing from "./Router.jsx"
 import { DataContext } from "./Components/DataProvider/DataProvider.jsx"
 import { Type } from "./Utility/action.type.js"
-import { auth } from "./Utility/firebase.js"
+import { auth } from "./Utility/firebase.js" 
 
 function App() {
   const [{user}, dispatch] = useContext(DataContext)
@@ -16,11 +16,11 @@ function App() {
       if(authUser){
         dispatch({
           type: Type.SET_USER,
-          user: authUser
+          user: authUser 
         })
       } else{
         dispatch({
-          type: Type.SET_USER,
+          type: Type.SET_USER, 
           user: null
         })
       }
