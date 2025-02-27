@@ -11,8 +11,13 @@ function ProductCard({product, flex, renderDesc, renderAdd}) {
     
     const {image, title, id, rating, price, description}= product;
 
+    // Access global state and dispatch function
+
     const [state, dispatch]= useContext(DataContext)
     console.log(state)
+
+    // Local state for managing the rating
+//   const [userRating, setUserRating] = useState(rating?.rate || 0);
 
     const addToCart =()=>{
         dispatch({
@@ -30,13 +35,14 @@ function ProductCard({product, flex, renderDesc, renderAdd}) {
         </Link>
         <div className= {styles.description }>
             <h3 className=' ' > {title}</h3> 
+
             {renderDesc && <div style={{ maxWidth: "750px"}}> {description}</div>}
             <div className= {`${styles.rating}  `}> 
-            {console.log("Rating Value:", rating?.rate)}
-            {console.log("Rating Count:", rating?.count)} 
+            {/* {console.log("Rating Value:", rating?.rate)}
+            {console.log("Rating Count:", rating?.count)}  */}
 
                 {/* Rating */}
-                <Rating value={rating?.rate || 0} precision={0.1} readOnly/>
+                <Rating value={rating?.rate || 0} precision={0.1}/>
                 {/* Count*/}
                 <small className=' ' > {rating?.count} </small>
             </div>

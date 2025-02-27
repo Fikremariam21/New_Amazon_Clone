@@ -13,7 +13,7 @@ function Product() {
       
         axios.get (API_ENDPOINT)
        .then((res) => {
-        console.log("Fetched Data:", res.data);
+        // console.log("Fetched Data:", res.data);
         setIsLoading(false)
         setProduct(res.data)
         isLoading
@@ -23,7 +23,7 @@ function Product() {
         setIsLoading(false)
         
        })
-     }, []);
+     },[]);
     
   return (
     <div className={styles.main_container}>

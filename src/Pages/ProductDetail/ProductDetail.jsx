@@ -17,8 +17,7 @@ const ProductDetail = () => {
     // if (!productId || product.id) return; // Prevent fetching if product exists
     setIsLoading(true);
 
-    axios
-      .get(`${productUrl}/products/${productId}`)
+    axios.get(`${productUrl}/products/${productId}`)
       .then((res) => {
         setProduct(res.data);
         setIsLoading(false);

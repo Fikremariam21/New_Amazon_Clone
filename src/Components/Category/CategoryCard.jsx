@@ -9,13 +9,13 @@ const CategoryCard = ({data}) => {
   return (
     <div className={`${styles.category_card} `}> 
 
-      <Link to= {`/category/${data.name}`} className= " ">
+      <Link to= {`/category/${data.name}`}>
         <span>
           <h2 className={`${styles.title}`}>{data.title}</h2>
         </span>
-        <img src={data.imgLink} alt={data.title} className=''/>
+        <img src={data.imgLink} alt={data.title}/>
         <p className=" ">Shop now</p>
-      </Link>
+      </Link> 
     </div>
   );
 };
