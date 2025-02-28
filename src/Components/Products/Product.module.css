@@ -12,7 +12,7 @@
 
    .card_container {
     width: 250px;
-    height: auto;
+    /* height: auto; */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     padding: 0 10px  ;
     color: black;
@@ -27,9 +27,9 @@
   }
   
   .card_container img {
-    padding-top: 0px;  
+    padding-top: 10px;  
     width: 100%; 
-    max-height: 120px;
+    max-height: 130px;
     display: block;
     margin: 0 auto;
     object-fit: contain;

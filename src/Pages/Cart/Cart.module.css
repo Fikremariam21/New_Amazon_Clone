@@ -54,10 +54,12 @@
     gap: 20px;
 }
 .cart_product{
+    height: 380px;
     display: flex;
     gap: 10px;
 }
 .btn_container{
+     height: 200px;
     display: flex;
     flex-direction: column;
     justify-content: center;
