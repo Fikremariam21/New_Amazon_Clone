@@ -14,7 +14,7 @@ const CategoryCard = ({data}) => {
           <h2 className={`${styles.title}`}>{data.title}</h2>
         </span>
         <img src={data.imgLink} alt={data.title}/>
-        <p className=" ">Shop now</p>
+        <p>Shop now</p>
       </Link> 
     </div>
   );

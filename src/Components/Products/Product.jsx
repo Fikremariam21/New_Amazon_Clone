@@ -6,7 +6,7 @@ import Loader from '../Loader/Loader';
 import {API_ENDPOINT} from '../../Config/config'
 
 function Product() {
-    const [products, setProduct] = useState([]);
+    const [products, setProducts] = useState([]);
     const [isLoading, setIsLoading] = useState(false)
      useEffect(() => {
       setIsLoading(true)
@@ -15,7 +15,7 @@ function Product() {
        .then((res) => {
         // console.log("Fetched Data:", res.data);
         setIsLoading(false)
-        setProduct(res.data)
+        setProducts(res.data)
         isLoading
        
        }).catch((err) => {
@@ -32,7 +32,9 @@ function Product() {
         <section className= {`${styles.product_container}`}> 
         {
             products.map((singleProduct) => (
-                <ProductCard renderAdd={true} product= {singleProduct} key= {singleProduct.id}/>
+                <ProductCard 
+                product= {singleProduct} key= {singleProduct.id} renderAdd={true} 
+                />
             ))
         }
     </section>)

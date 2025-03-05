@@ -15,8 +15,8 @@ function ImageCarousel() {
           showStatus={false}
         >
              {
-              img.map((imageLink, index) => {
-                return <img key= {index} src={imageLink} alt='carousel images' className={classes.carousel_image}/>
+              img.map((imageLink) => {
+                return <img key= {imageLink} src={imageLink} alt='carousel images' className={classes.carousel_image}/>
               })
              }
         </Carousel> 

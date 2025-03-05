@@ -25,9 +25,7 @@ const Cart = () => {
         type: Type.REMOVE_FROM_BASKET,
         id: id
       })
-
    }
-
   return (
     <LayOut>
       <section className={styles.cart_container}>
@@ -72,9 +70,7 @@ const Cart = () => {
             </span>
             <Link to="/Payment"> Continue to checkout </Link>
            </div>
-
           }
-        
       </section>
     </LayOut>
   );

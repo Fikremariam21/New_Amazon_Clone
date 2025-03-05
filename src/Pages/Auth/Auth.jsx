@@ -1,11 +1,10 @@
 import React, { useState, useEffect, useContext} from "react";
-import { Link, useNavigate} from "react-router-dom";
+import { Link, useNavigate, useLocation} from "react-router-dom";
 import styles from "./Auth.module.css";
 import {auth} from "../../Utility/firebase";
 import { signInWithEmailAndPassword, createUserWithEmailAndPassword} from "firebase/auth";
 import {DataContext} from '../../Components/DataProvider/DataProvider.jsx';
 import {ClipLoader} from "react-spinners"
-
 
 function Auth() {
   const [email, setEmail] = useState("");
@@ -16,12 +15,12 @@ function Auth() {
     signUp: false,
   })
 
-
   const[{user},  dispatch] = useContext(DataContext);
 
 // Initialize the navigation
 
   const navigate = useNavigate()
+  const navStateData = useLocation()
   // console.log(user)
 
   const authHandler = async(e) =>{
@@ -29,23 +28,20 @@ function Auth() {
     e.preventDefault();
     // console.log(e.target.name);
     if(e.target.name === "Signin"){
-      
-
       signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         dispatch({
           type: 'SET_USER',
           user: userCredential.user, 
-        });
+        }); 
         setLoading({...loading, signIn: false})
-        navigate("/")
+        navigate(navStateData?.state?.redirect ||"/")   
       })
       .catch((err) => {
         setError(err.message);
         setLoading({...loading, signIn: false})
         // ..
       });
-      
 
     } else{
       setLoading({...loading, signUp: true})
@@ -57,7 +53,7 @@ function Auth() {
           user: userCredential.user, 
         });
         setLoading({...loading, signUp: false})
-        navigate("/")
+        navigate(navStateData?.state?.redirect ||"/") 
       })
       .catch((err) => {
         setError(err.message);
@@ -76,6 +72,20 @@ function Auth() {
       </Link>
       <div className={styles.login_container}>
         <h1> Sign in</h1>
+        {
+        navStateData?.state?.msg &&(
+            <small
+              style={{
+                padding: "5px",
+                textAlign: "center",
+                color: "red",
+                fontWeight: "bold",
+              }}
+              >
+              {navStateData.state.msg}
+            </small>
+          )
+        }
 
         <form action="">
           <div> 

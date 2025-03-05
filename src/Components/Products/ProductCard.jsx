@@ -31,12 +31,10 @@ function ProductCard({product, flex, renderDesc, renderAdd}) {
      
     <div  className= {`${styles.card_container} ${flex? styles.product_flexed : ""}`}> 
         <Link to= {`/products/${id}`} className={styles.image_link}> 
-         
-         
             <img src={image} alt="" /> 
         </Link>
         <div className= {styles.description }>
-            <h3 className=' ' > {title}</h3> 
+            <h3> {title}</h3> 
 
             {renderDesc && <div style={{ maxWidth: "750px"}}> {description}</div>}
             <div className= {`${styles.rating}  `}> 
@@ -55,13 +53,8 @@ function ProductCard({product, flex, renderDesc, renderAdd}) {
             {
             renderAdd && <button className= {`${styles.button}`} onClick={addToCart}> add to cart </button> 
             }
-            {/* <div>
-               
-            </div> */}
         </div>
     </div>
-     
   )
 }
-
 export default ProductCard
