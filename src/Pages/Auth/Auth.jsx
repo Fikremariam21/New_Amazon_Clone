@@ -134,8 +134,6 @@ function Auth() {
             ):(
             " Create your Amazon Account"
             )}
-       
-
       </button>
       {
         error && <small style={{paddingTop: "7px", color: "red"}}> {error} </small>

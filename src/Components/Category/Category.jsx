@@ -7,9 +7,12 @@ const Category = () => {
   return (
     <section className= {`${styles.category_section}  `}>
       <div className={`${styles.category_container} `}>
-        {categoryInfos.map((infos) => (
+
+        {
+        categoryInfos.map((infos) => (
           <CategoryCard key={infos.name} data={infos} />
-        ))}
+        ))
+        }
       </div>
     </section>
   );
