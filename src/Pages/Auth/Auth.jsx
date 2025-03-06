@@ -14,7 +14,6 @@ function Auth() {
     signIn: false,
     signUp: false,
   })
-
   const[{user},  dispatch] = useContext(DataContext);
 
 // Initialize the navigation
@@ -65,8 +64,8 @@ function Auth() {
     <section className={styles.login}>
       <Link to="/">
         <img
-          src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg"
-          alt="Amazon Logo"
+          src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" 
+          alt="Amazon Logo" 
           className={styles.logo}
         />
       </Link>

@@ -11,6 +11,16 @@
   --my-blue: rgb(9, 132, 209);
   --Amazon-btn: #fcda42;
   
+/* Related with the Footer */
+
+  --footer-bg: #232F3E;
+  --footer-text: white;
+  --link-hover: gray;
+  --section-bg: #37475A;
+  --border-color: rgb(204, 204, 204);
+  --font-family: "Amazon Ember", Arial, sans-serif;
+  --font-size-sm: 0.88rem;
+  --font-size-md: 1rem;
 }
 
 html {
