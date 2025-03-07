@@ -13,7 +13,6 @@ function Product() {
       
         axios.get (API_ENDPOINT)
        .then((res) => {
-        // console.log("Fetched Data:", res.data);
         setIsLoading(false)
         setProducts(res.data)
         isLoading

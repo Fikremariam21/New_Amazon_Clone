@@ -38,9 +38,7 @@ function ProductCard({product, flex, renderDesc, renderAdd}) {
 
             {renderDesc && <div style={{ maxWidth: "750px"}}> {description}</div>}
             <div className= {`${styles.rating}  `}> 
-            {/* {console.log("Rating Value:", rating?.rate)}
-            {console.log("Rating Count:", rating?.count)}  */}
-
+            
                 {/* Rating */}
                 <Rating value={rating?.rate || 0} precision={0.1}/>
                 {/* Count*/}

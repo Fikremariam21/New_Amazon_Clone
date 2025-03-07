@@ -44,7 +44,6 @@ const Results = () => {
 
         </div>
     </div>
-
             )
         }
 

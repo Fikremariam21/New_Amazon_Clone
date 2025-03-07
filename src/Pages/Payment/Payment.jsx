@@ -43,7 +43,6 @@ const Payment = () => {
         method: "POST",
         url: `/payment/create?total=${total * 100}`,
       });
-      console.log(response.data);
       const clientSecret = response.data?.clientSecret;
 
       // Step Two
@@ -87,7 +86,7 @@ const Payment = () => {
       {/* Header */}
       <div className={styles.payment_header}>
         Checkout ({totalItems}) items{" "}
-        {/*to make the item number dynamic, we will import our basket. In our case the basket is found in DataContext. The we will import useContext */}
+        {/*to make the item number dynamic, we will import our basket. In our case the basket is found in DataContext. Then we will import useContext */}
       </div>
       {/* Payment method */}
       <section className={styles.payment}>
