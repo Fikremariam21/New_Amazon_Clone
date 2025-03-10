@@ -1,6 +1,6 @@
 {
   "homepage": "https://fikremariam21.github.io/New_Amazon_Clone/",
-  "name": "new-amazon-clone",
+  "name": "new-amazon-clone",  
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -8,12 +8,12 @@
     "dev": "vite",
     "build": "vite build",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist",
+    "deploy": "npm run build && gh-pages -d dist -b main",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview" 
   },
-  "dependencies": {
-    "@emotion/react": "^11.14.0",
+  "dependencies": { 
+    "@emotion/react": "^11.14.0", 
     "@emotion/styled": "^11.14.0",
     "@mui/material": "^6.4.4",
     "@stripe/react-stripe-js": "^3.1.1",

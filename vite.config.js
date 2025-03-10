@@ -9,4 +9,4 @@ export default defineConfig({
     react()
   ],
   base: "/New_Amazon_Clone/",
-})
+}) 
