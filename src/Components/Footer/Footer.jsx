@@ -2,6 +2,7 @@
 import React from "react";
 import { MdLanguage } from "react-icons/md";
 import styles from "./Footer.module.css";
+import {Link} from 'react-dom'
 
 const Footer = () => {
   return (

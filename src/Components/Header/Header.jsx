@@ -60,13 +60,12 @@ const Header = () => {
                     <option value="">EN</option>
                 </select> 
                 </Link>
-                <Link to={!user && "/auth"}>
+                 <Link to={!user && "/auth"}> {/* redirect log in page, if no logged in user */}
 
                 <div> 
                   {
                     user? ( 
                       <> 
-                      
                       <p> Hello {user?.email?.split("@")[0]} </p>
                       <span onClick={() => auth.signOut()}>
                         Sign Out </span> 

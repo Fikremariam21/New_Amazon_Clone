@@ -1,7 +1,3 @@
-// import ImageCarousel from "./Components/Carousel/ImageCarousel"
-// import Category from "./Components/Category/Category"
-// import Header from "./Components/Header/Header"
-// import Product from "./Components/Products/Product"
 import { useContext, useEffect } from "react"
 import Routing from "./Router.jsx"
 import { DataContext } from "./Components/DataProvider/DataProvider.jsx"

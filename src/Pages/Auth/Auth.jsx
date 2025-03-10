@@ -11,26 +11,28 @@ function Auth() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState({
-    signIn: false,
-    signUp: false,
+    signIn: false, 
+    signUp: false, 
   })
   const[{user},  dispatch] = useContext(DataContext);
 
 // Initialize the navigation
 
-  const navigate = useNavigate()
-  const navStateData = useLocation()
-  // console.log(user)
+  const navigate = useNavigate() // initializing navigate function
+  const navStateData = useLocation() 
+  console.log(user)
 
   const authHandler = async(e) =>{
     setLoading({...loading, signIn: true})
     e.preventDefault();
+    console.log(e.target.name)
     if(e.target.name === "Signin"){
       signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
+        console.log(userCredential)
         dispatch({
           type: 'SET_USER',
-          user: userCredential.user, 
+          user: userCredential.user, // accessing the user data from userCredential object
         }); 
         setLoading({...loading, signIn: false})
         navigate(navStateData?.state?.redirect ||"/")   
@@ -38,7 +40,6 @@ function Auth() {
       .catch((err) => {
         setError(err.message);
         setLoading({...loading, signIn: false})
-        // ..
       });
 
     } else{
@@ -106,9 +107,9 @@ function Auth() {
         </form>
         {/* Agreement */}
         <p className={styles.terms_links}> 
-        By continuing, you agree to Amazon's
-           <a href="https://www.amazon.com/gp/help/customer/display.html/ref=ap_signin_notification_condition_of_use?ie=UTF8&nodeId=508088" style={{ textDecoration: 'underline' , color: '#007185'}}>  Conditions of Use </a>
-           and <a href="https://www.amazon.com/gp/help/customer/display.html/ref=ap_signin_notification_privacy_notice?ie=UTF8&nodeId=468496" style={{ textDecoration: 'underline', color: '#007185'}}> Privacy Notice</a>
+        By continuing, you agree to Amazon's Fake
+           <a href="#" style={{ textDecoration: 'underline' , color: '#007185'}}>  Conditions of Use </a>
+           and <a href="#" style={{ textDecoration: 'underline', color: '#007185'}}> Privacy Notice</a>
         </p>
         <a> 
         <p className={styles.help}> Need help?</p>
