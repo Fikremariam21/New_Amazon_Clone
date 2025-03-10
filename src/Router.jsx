@@ -14,7 +14,7 @@ import ProtectedRoute from './Components/ProtectedRoute/ProtectedRoute';
 const stripePromise = loadStripe('pk_test_51QwkXDAwsVVf7WtstCLULoxsyCWHFPiotYWv4mLAaj4WUHNxJLDVq9mpxJ4Ve3lsygIAliYPSnCDIzHehN0FHVk000c8WRuJxC');
 const Routing = () => {
   return (
-     <Router> 
+     <BrowserRouter basename="/New_Amazon_Clone"> 
       <Routes>
         <Route path='/' element={ <Landing/>}/>
         <Route path='/auth' element={ <Auth/>}/>
@@ -37,7 +37,7 @@ const Routing = () => {
         <Route path='/products/:productId' element={<ProductDetail/>}/>
         <Route path='signup' element={<Auth/>}/>  
       </Routes>
-     </Router>
+     </BrowserRouter>
   )
 }
 export default Routing
